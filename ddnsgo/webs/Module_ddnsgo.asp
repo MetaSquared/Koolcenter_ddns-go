@@ -179,7 +179,7 @@ function pannel_access(){
 			if(hostname.indexOf('.kooldns.cn') != -1){
 				hostname = hostname.replace('.kooldns.cn','-ddnsgo.kooldns.cn');
 			}else if(hostname.indexOf('.ddnsto.com') != -1){
-				hostname = hostname.replace('.ddnsto.com','-ddnso.ddnsto.com');
+				hostname = hostname.replace('.ddnsto.com','-ddnsgo.ddnsto.com');
 			}else{
 				hostname = hostname.replace('.tocmcc.cn','-ddnsgo.tocmcc.cn');
 			}

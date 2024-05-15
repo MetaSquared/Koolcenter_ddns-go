@@ -118,7 +118,6 @@ i {
 	visibility:hidden;
 }
 .pop_div_bg{
-	background-color: #2B373B; /* W3C asuscss */
 }
 .QISform_wireless {
 	width:690px;
@@ -126,7 +125,6 @@ i {
 	color:#FFFFFF;
 }
 #ddnsgo_db_settings_div{
-	border: none; /* W3C asuscss */
 }
 </style>
 <script type="text/javascript">
@@ -171,9 +169,6 @@ function pannel_access(){
 	if(dbus["ddnsgo_enable"] == "1"){
 		var protocol = "http:";
 		var hostname = document.domain;
-		if (dbus["ddnsgo_publicswitch"] != 1){
-			hostname = dbus["ddnsgo_addr"];
-		}
 		if (hostname.indexOf('.kooldns.cn') != -1 || hostname.indexOf('.ddnsto.com') != -1 || hostname.indexOf('.tocmcc.cn') != -1) {
 			protocol = location.protocol;//如果是走的ddnsto则不管是否开启公网开关。
 			if(hostname.indexOf('.kooldns.cn') != -1){

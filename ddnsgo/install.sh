@@ -110,7 +110,7 @@ install_now() {
 	local ddnsgo_process=$(pidof ddnsgo)
 	if [ "$ddnsgo_enable" == "1" -o -n "${ddnsgo_process} ];then
 		echo_date "先关闭DDNS-Go插件！以保证更新成功！"
-		/koolshare/scripts/ddnsgo_config.sh stop
+		sh /koolshare/scripts/ddnsgo_config.sh stop
 	fi
 
 	# create ddns-go config dirctory
@@ -163,7 +163,7 @@ install_now() {
 	# re_enable
 	if [ "${enable}" == "1" ];then
 		echo_date "重新启动DDNS-Go插件！"
-		/koolshare/scripts/ddnsgo_config.sh start
+		sh /koolshare/scripts/ddnsgo_config.sh start
 	fi
 
 	# finish

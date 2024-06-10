@@ -214,7 +214,7 @@ close_port(){
 
 close_dg(){
 	# 1. remove log
-	rf -rf ${DG_LOG_FILE}
+	rm -rf ${DG_LOG_FILE}
 
 	# 2. stop ddns-go
 	close_dg_process

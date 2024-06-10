@@ -7,5 +7,5 @@
     "module": "ddnsgo", 
     "tags": "DDNS", 
     "title": "DDNS-Go", 
-    "version": "1.3.0"
+    "version": "1.2.1"
 }

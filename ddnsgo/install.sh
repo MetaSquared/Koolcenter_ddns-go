@@ -132,6 +132,7 @@ install_now() {
 	cp -rf /tmp/${module}/uninstall.sh /koolshare/scripts/uninstall_${module}.sh
 	
 	#创建开机自启任务
+	echo_date "创建开机自启任务..."
 	[ ! -L "/koolshare/init.d/S99ddnsgo.sh" ] && ln -sf /koolshare/scripts/ddnsgo_config.sh /koolshare/init.d/S99ddnsgo.sh
 	[ ! -L "/koolshare/init.d/N99ddnsgo.sh" ] && ln -sf /koolshare/scripts/ddnsgo_config.sh /koolshare/init.d/N99ddnsgo.sh
 
@@ -161,7 +162,7 @@ install_now() {
 	dbus_nset ddnsgo_addr "$(ifconfig br0|grep -Eo "inet addr.+"|awk -F ":| " '{print $3}' 2>/dev/null)"
 
 	# re_enable
-	if [ "${enable}" == "1" ];then
+	if [ "${ddnsgo_enable}" == "1" ];then
 		echo_date "重新启动DDNS-Go插件！"
 		sh /koolshare/scripts/ddnsgo_config.sh start
 	fi

@@ -496,7 +496,8 @@ function validateInput(input, minValue, maxValue) {
 										<div style="margin: 10px 0 10px 5px;" class="splitLine"></div>
 										<div class="SimpleNote">
 											<a href="https://github.com/jeessy2/ddns-go" target="_blank"><em>DDNS-Go</em></a>&nbsp;自动获得你的公网 IPv4 或 IPv6 地址，并解析到对应的域名服务
-											<span><a type="button" href="https://github.com/jeessy2/ddns-go" target="_blank" class="ks_btn" style="margin-left:5px;" >项目地址</a></span>
+											<span><a type="button" href="https://github.com/MetaSquared/Koolcenter_ddns-go/blob/main/Changelog.txt" target="_blank" class="ks_btn" style="margin-left:5px;" >更新日志</a></span>
+											<span><a type="button" href="https://github.com/MetaSquared/Koolcenter_ddns-go" target="_blank" class="ks_btn" style="margin-left:5px;" >项目地址</a></span>
 											<span><a type="button" class="ks_btn" href="javascript:void(0);" onclick="get_log(1)" style="margin-left:5px;">插件日志</a></span>
 										</div>
 										<div id="ddnsgo_status_pannel">

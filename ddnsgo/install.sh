@@ -144,7 +144,6 @@ install_now() {
 	# dbus value
 	echo_date "设置插件默认参数..."
 	dbus set ddnsgo_version="${PLVER}"
-	dbus set ddnsgo_binary="$(ddnsgo -v)"
 	dbus set softcenter_module_ddnsgo_version="${PLVER}"
 	dbus set softcenter_module_ddnsgo_install="1"
 	dbus set softcenter_module_ddnsgo_name="${module}"

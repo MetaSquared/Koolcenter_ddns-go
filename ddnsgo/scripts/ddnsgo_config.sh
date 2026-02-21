@@ -293,4 +293,13 @@ web_submit)
 status)
 	check_status
 	;;
+version)
+	# 获取ddnsgo二进制版本号
+	Version=$(/koolshare/bin/ddnsgo -v)
+	if [ -n "$Version" ]; then
+		http_response "$Version"
+	else
+		http_response "获取版本号失败"
+	fi
+	;;
 esac

@@ -153,6 +153,29 @@ function get_dbus_data(){
 			conf2obj();
 			show_hide_element();
 			pannel_access();
+			get_ddnsgo_binary_version();
+		}
+	});
+}
+
+function get_ddnsgo_binary_version(){
+	E("ddnsgo_binary").innerHTML = "获取中...";
+	var id = parseInt(Math.random() * 100000000);
+	var postData = {"id": id, "method": "ddnsgo_config.sh", "params":['version'], "fields": ""};
+	$.ajax({
+		type: "POST",
+		url: "/_api/",
+		async: true,
+		data: JSON.stringify(postData),
+		success: function (response) {
+			if (E("ddnsgo_binary")) {
+				E("ddnsgo_binary").innerHTML = response.result;
+			}
+		},
+		error: function(){
+			if (E("ddnsgo_binary")) {
+				E("ddnsgo_binary").innerHTML = "获取版本号失败";
+			}
 		}
 	});
 }
@@ -192,12 +215,10 @@ function conf2obj(){
 			$("#" + params_input[i]).val(dbus[params_input[i]]);
 		}
 	}
-	if (dbus["ddnsgo_version"]){
+	if (dbus["ddnsgo_version"]){ 
 		E("ddnsgo_version").innerHTML = " - " + dbus["ddnsgo_version"];
 	}
-	if (dbus["ddnsgo_binary"]){
-		E("ddnsgo_binary").innerHTML = dbus["ddnsgo_binary"];
-	}
+	// 二进制版本号通过get_ddnsgo_binary_version()函数获取，不再从dbus读取
 }
 
 function show_hide_element(){
